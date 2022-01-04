@@ -1,0 +1,113 @@
+def suma(a, b):
+   
+    return a + b
+
+def resta(c, d):
+    
+    return c - d
+
+
+def primo(e):
+    n = e
+    c = 0
+    for x in range( n ):
+        if ( n % 1 == 0 and n % (x + 1) == 0 and n != 1):
+            c = c + 1
+    if( c == 2):
+        print ('True') 
+    else:
+        print('False')
+
+
+
+def perfecto(f):
+    
+    n = f
+    lista = [  ]
+    x = 1
+ 
+    while (x < n):
+        if ( n % x == 0):
+            lista.append(x)
+            
+            x = x + 1
+            
+        else:
+            x = x + 1    
+       
+    sumatoria = sum(lista)
+    
+    if ( sumatoria == n):
+        print('True')        
+    else:
+        print('False')
+
+
+def imprimirmenu():
+    print(' ')
+    print('MENU:')
+    print('1-Sumar dos numeros\n2-Restar dos numeros')
+    print('3-Comprobar si un numero es primo')
+    print('4-Comprobar si un numero es pefecto')
+    print('5-Mostrar los dos ultimos numeros ingresados')       
+    print('6-Salir')
+    print('  ')
+    print(' Elija el numero de la opcion correspondiente')
+
+def menu():
+
+    valores = [ ]
+
+    while(True):
+
+        imprimirmenu()
+        opcion = int(input())
+        
+        if (opcion == 1):
+            numero1 = int(input('Ingrese el primer numero a sumar. '))
+            numero2 = int(input('Ingrese el segundo numero a sumar. '))
+            print('  ')
+            valores.append(numero1)
+            valores.append(numero2)
+            print(suma(numero1, numero2))
+            
+        elif (opcion == 2):
+            numero1 = int(input('Ingrese el primer numero a restar. '))
+            numero2 = int(input('Ingrese el segundo numero a restar. '))
+            print('  ')
+            valores.append(numero1)
+            valores.append(numero2)
+            print(resta(numero1, numero2))
+            
+
+            
+        elif (opcion == 3):
+            numero1 = int(input('Ingrese el numero a verificar si es primo. '))
+            print('  ')
+            valores.append(numero1)
+            primo(numero1)
+       
+        elif (opcion == 4):
+            numero1 = int(input('Ingrese el numero a verificar si es perfecto. '))
+            print('  ')
+            valores.append(numero1)
+            perfecto(numero1)
+
+        elif (opcion == 5):
+            n = len(valores)
+            print('  ')
+            print(*valores[n-2:], sep = '\n' )
+        
+        elif(opcion == 6): break
+
+        else:
+            print('  ')
+            print(' Ingrese una opcion correcta')
+
+
+
+
+menu()        
+
+
+
