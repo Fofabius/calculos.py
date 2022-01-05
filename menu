@@ -14,9 +14,9 @@ def primo(e):
         if ( n % 1 == 0 and n % (x + 1) == 0 and n != 1):
             c = c + 1
     if( c == 2):
-        print ('True') 
+        print ('Es primo') 
     else:
-        print('False')
+        print('No es primo')
 
 
 
@@ -38,9 +38,9 @@ def perfecto(f):
     sumatoria = sum(lista)
     
     if ( sumatoria == n):
-        print('True')        
+        print('Es perfecto')        
     else:
-        print('False')
+        print('No es perfecto')
 
 
 def imprimirmenu():
